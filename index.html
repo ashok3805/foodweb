@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <h1 class="logo">🍔 Swiggy</h1>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#offers">Offers</a></li>
+                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Your Favorite Food Delivered Hot & Fresh</h2>
+                <p>Order from the best restaurants around you.</p>
+                <form class="search-bar">
+                    <input type="text" id="location" placeholder="Enter your delivery location" required>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Popular Restaurants -->
+        <section id="restaurants" class="restaurants">
+            <div class="container">
+                <h2>Popular Restaurants</h2>
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <img src="pizza3.avif" alt="Pizza Palace">
+                        <h3>Pizza Palace</h3>
+                        <p>Italian • Pizza</p>
+                        <span>4.5 ⭐ | 30 mins</span>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="burger2.avif" alt="Burger Town">
+                        <h3>Burger Town</h3>
+                        <p>American • Burgers</p>
+                        <span>4.2 ⭐ | 25 mins</span>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="spice.webp" alt="Spice Affair">
+                        <h3>Spice Affair</h3>
+                        <p>Indian • Curries</p>
+                        <span>4.8 ⭐ | 40 mins</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section id="offers" class="offers">
+            <div class="container">
+                <h2>Exciting Offers</h2>
+                <p>Get discounts on your favorite meals!</p>
+        
+                <div class="offers-gallery">
+                    <div class="offer-item">
+                        <img src="pizza1.avif" alt="Offer 1">
+                        <h3><a href="order.html" style="text-decoration: none;color: black;">20% Off on Pizza</a></h3>
+                        <p>Get 20% off on all pizzas. Limited time offer!</p>
+                    </div>
+                    <div class="offer-item">
+                        <img src="burger1.avif" alt="Offer 2">
+                        <h3>Buy 1 Get 1 Free on Burgers</h3>
+                        <p>Order 1 burger and get another one free!</p>
+                    </div>
+                    <div class="offer-item">
+                        <img src="delivery.avif" alt="Offer 3">
+                        <h3>Free Delivery</h3>
+                        <p>Enjoy free delivery on your first order.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiggy. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <section>
+            <h2>All Orders</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Pizza Name</th>
+                        <th>Quantity</th>
+                        <th>Total Cost</th>
+                        <th>Scheduled Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTable"></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>All Users</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTable"></tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        async function fetchOrders() {
+            const response = await fetch('admin.php?endpoint=orders');
+            const result = await response.json();
+            const ordersTable = document.getElementById('ordersTable');
+            ordersTable.innerHTML = '';
+            result.data.forEach(order => {
+                ordersTable.innerHTML += `
+                    <tr>
+                        <td>${order.id}</td>
+                        <td>${order.user_name}</td>
+                        <td>${order.pizza_name}</td>
+                        <td>${order.quantity}</td>
+                        <td>$${order.total_cost}</td>
+                        <td>${order.scheduled_time || 'ASAP'}</td>
+                        <td>${order.status}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function fetchUsers() {
+            const response = await fetch('admin.php?endpoint=users');
+            const result = await response.json();
+            const usersTable = document.getElementById('usersTable');
+            usersTable.innerHTML = '';
+            result.data.forEach(user => {
+                usersTable.innerHTML += `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.phone}</td>
+                        <td>${user.created_at}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        fetchOrders();
+        fetchUsers();
+    </script>
+</body>
+</html>

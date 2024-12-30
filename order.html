@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order - Swiggy Clone</title>
+    <link rel="stylesheet" href="order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <h1 class="logo">🍕 Pizza Delight</h1>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <!-- Pizza Selection -->
+        <section class="pizza-list">
+            <h2>Order Your Favorite Pizza</h2>
+            <div class="pizza-item" data-name="Margherita" data-price="8.99">
+                <img src="pizzat3.jpg" alt="Margherita Pizza">
+                <p>Margherita - $8.99</p>
+                <div class="quantity-controls">
+                    <button class="quantity-btn decrease" data-name="Margherita">-</button>
+                    <span id="quantity-Margherita">0</span>
+                    <button class="quantity-btn increase" data-name="Margherita">+</button>
+                </div>
+            </div>
+            <div class="pizza-item" data-name="Pepperoni" data-price="10.99">
+                <img src="pizzat4.jpg" alt="Pepperoni Pizza">
+                <p>Pepperoni - $10.99</p>
+                <div class="quantity-controls">
+                    <button class="quantity-btn decrease" data-name="Pepperoni">-</button>
+                    <span id="quantity-Pepperoni">0</span>
+                    <button class="quantity-btn increase" data-name="Pepperoni">+</button>
+                </div>
+            </div>
+            <div class="pizza-item" data-name="BBQ Chicken" data-price="12.99">
+                <img src="pizzat5.jpg" alt="BBQ Chicken Pizza">
+                <p>BBQ Chicken - $12.99</p>
+                <div class="quantity-controls">
+                    <button class="quantity-btn decrease" data-name="BBQ Chicken">-</button>
+                    <span id="quantity-BBQ Chicken">0</span>
+                    <button class="quantity-btn increase" data-name="BBQ Chicken">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <aside class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cartItems">
+                <!-- Items dynamically added here -->
+            </ul>
+            <div class="cart-total">
+                <p>Total: $<span id="totalCost">0.00</span></p>
+            </div>
+            <button class="btn" id="checkoutButton">Proceed to Checkout</button>
+        </aside>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+</html>
